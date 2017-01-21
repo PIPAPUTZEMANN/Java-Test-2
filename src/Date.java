@@ -95,5 +95,39 @@ public String toString(){
 	
 }
 
-
+public boolean isBefore(Date otherDate){
+	
+	if(this.year < otherDate.year || (this.year==otherDate.year && this.month < otherDate.month) || (this.year==otherDate.year && this.month==otherDate.month && this.day < otherDate.day)){
+		
+		return true;
+		
+		
+	}else{ 
+		
+		return false;
+	}
 }
+public Date nextDay(){
+		
+	if(isValidDate(day+1,month,year)){
+		
+		return new Date(day+1,month,year);
+	}
+	
+	else if(isValidDate(1,month+1,year)){
+		
+		return new Date(1,month+1,year);
+	}else{
+		
+		return new Date(1,1,year+1);
+	}
+	
+	}
+			
+		
+	
+	
+}
+
+
+
